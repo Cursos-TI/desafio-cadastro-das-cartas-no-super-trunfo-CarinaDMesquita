@@ -11,9 +11,9 @@ int main() {
     // Exemplos de atributos: estado, código da cidade, nome, população, área, PIB, número de pontos turísticos.
     // Variáveis declaradas para cada atributo.
 
-    char estado[2];
+    char estado[4];
     char cod_cidade[6];
-    char nome_cidade[40];
+    char nome_cidade[65];
     int habitantes;
     float area_km;
     float pib; 
@@ -57,8 +57,8 @@ int main() {
     printf("Código da Cidade: %s\n", cod_cidade);
     printf("Nome da Cidade: %s\n", nome_cidade);
     printf("Habitantes: %d\n", habitantes);
-    printf("Área km²: %4.f\n", area_km);
-    printf("PIB: %3.f\n", pib);
+    printf("Área: %.1f km²\n", area_km);
+    printf("PIB: %.2f bilhões de reais\n", pib);
     printf("Números de pontos Turísticos: %d\n\n", numeros_pontos_turistico);
 
     printf("OBRIGADO!!! \n");
