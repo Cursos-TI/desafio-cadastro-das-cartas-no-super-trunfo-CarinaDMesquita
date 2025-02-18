@@ -19,7 +19,7 @@ int main() {
     float pib1; 
     int numeros_pontos_turistico1;
 
-    char estado2;
+    char estado2[2];
     char cod_cidade2[4];
     char nome_cidade2[65];
     int habitantes2;
@@ -38,7 +38,7 @@ int main() {
     // Função printf para a saída de dados fornecendo as informações ao usuário sobre os atributos da cidade Carta 1.
     //Função scanf capturando as entradas do usuário para cada atributo da cidade Carta 1.
 
-    printf("CARTA 1 \n\n");
+    printf("CARTA 1\n");
 
     printf("Informe o Estado:\n");
         printf ("ATENÇÃO: A LETRA DEVE SER MAIÚSCULA E TAMBÉM DEVE CONTER APENAS UMA LETRA DE 'A' A 'H'.\n");
@@ -62,18 +62,18 @@ int main() {
 
     printf("Informe quantos pontos túristicos tem nessa Cidade:\n");
     scanf("%d", &numeros_pontos_turistico1);
-    printf("\n");
+    printf("\n\n");
 
     
     // Cadastro CARTA 2:
     // Função printf para a saída de dados fornecendo as informações ao usuário sobre os atributos da cidade Carta 2.
     //Função scanf capturando as entradas do usuário para cada atributo da cidade Carta 2.
 
-    printf("CARTA 2 \n\n");
+    printf("CARTA 2\n");
 
     printf("Informe o Estado:\n");
         printf ("ATENÇÂO: A letra dever ser MAIÚSCULA e também deve conter apenas uma letra de 'A' a 'H'.\n");
-    scanf("%c", &estado2);
+    scanf("%s", &estado2);
 
     printf("Informe o Código da Cidade:\n"); 
         printf ("ATENÇÂO: O código da cidade deve conter a letra do estado seguida de um número de 01 a 04. \n");
@@ -93,8 +93,10 @@ int main() {
 
     printf("Informe quantos pontos túristicos tem nessa Cidade:\n");
     scanf("%d", &numeros_pontos_turistico2);
-    printf("\n");
+    printf("\n\n");
     
+    printf("RESULTADO FINAL\n\n");
+
     // Exibição dos dados da CARTA 1:
     // Função printf exibindo as informações e os valores de cada atributo da cidade cadastrada Carta 1
     
@@ -113,7 +115,7 @@ int main() {
     // Função printf exibindo as informações e os valores de cada atributo da cidade cadastrada Carta 2 
     
     printf("Carta 2\n");
-    printf("Estado: %c\n", estado2);
+    printf("Estado: %s\n", estado2);
     printf("Código da Cidade: %s\n", cod_cidade2);
     printf("Nome da Cidade: %s\n", nome_cidade2);
     printf("Habitantes: %d\n", habitantes2);
