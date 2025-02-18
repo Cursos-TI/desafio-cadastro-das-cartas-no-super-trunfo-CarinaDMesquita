@@ -11,13 +11,21 @@ int main() {
     // Variáveis declaradas e atributos das cidades. 
     // Esses são os atributos: estado, código da cidade, nome, população, área, PIB, número de pontos turísticos.
 
-    char estado1, estado2;
-    char cod_cidade1, cod_cidade2[15];
-    char nome_cidade1, nome_cidade2[65];
-    int habitantes1, habitantes2;
-    float area_km1, area_km2;
-    float pib1, pib2; 
-    int numeros_pontos_turistico1, numeros_pontos_turistico2 ;
+    char estado1; 
+    char cod_cidade1[4]; 
+    char nome_cidade1[65]; 
+    int habitantes1; 
+    float area_km1; 
+    float pib1; 
+    int numeros_pontos_turistico1;
+
+    char estado2;
+    char cod_cidade2[4];
+    char nome_cidade2[65];
+    int habitantes2;
+    float area_km2;
+    float pib2; 
+    int numeros_pontos_turistico2;
 
 
     // Inicio do jogo 
@@ -36,7 +44,7 @@ int main() {
         printf ("ATENÇÃO: A LETRA DEVE SER MAIÚSCULA E TAMBÉM DEVE CONTER APENAS UMA LETRA DE 'A' A 'H'.\n");
     scanf("%c", &estado1);
 
-    printf("Informe o Código da Cidade - Carta 1:\n"); 
+    printf("Informe o Código da Cidade:\n"); 
         printf ("ATENÇÂO: O CÓDIGO DA CIDADE DEVE CONTER A LETRA DO ESTADO SEGUIDA DE UM NÚMERO DE 01 a 04. \n");
     scanf("%s", &cod_cidade1);
 
@@ -54,7 +62,7 @@ int main() {
 
     printf("Informe quantos pontos túristicos tem nessa Cidade:\n");
     scanf("%d", &numeros_pontos_turistico1);
-    printf("\n\n");
+    printf("\n");
 
     
     // Cadastro CARTA 2:
@@ -85,7 +93,7 @@ int main() {
 
     printf("Informe quantos pontos túristicos tem nessa Cidade:\n");
     scanf("%d", &numeros_pontos_turistico2);
-    printf("\n\n");
+    printf("\n");
     
     // Exibição dos dados da CARTA 1:
     // Função printf exibindo as informações e os valores de cada atributo da cidade cadastrada Carta 1
@@ -98,7 +106,7 @@ int main() {
     printf("Área: %.1f km²\n", area_km1);
     printf("PIB: %.2f bilhões de reais\n", pib1);
     printf("Números de pontos Turísticos: %d\n", numeros_pontos_turistico1);
-    printf("\n\n");
+    printf("\n");
 
     
     // Exibição dos dados da CARTA 2:
@@ -112,10 +120,10 @@ int main() {
     printf("Área: %.1f km²\n", area_km2);
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Números de pontos Turísticos: %d\n", numeros_pontos_turistico2);
-    printf("\n\n");
+    printf("\n");
 
 
-    printf("FIM DO JOGO!!! \n");
+    printf("FIM DO JOGO!!! \n\n");
     printf("OBRIGADO(A)!!! \n");
 
 
