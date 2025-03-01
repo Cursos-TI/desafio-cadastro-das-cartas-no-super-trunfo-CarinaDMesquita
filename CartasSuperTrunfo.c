@@ -40,12 +40,12 @@ int main() {
 
     printf("CARTA 1\n");
 
+    printf ("ATENÇÃO: A letra dever ser maiúscula e deve conter apenas uma letra de 'A' à 'H'.\n");
     printf("Informe o Estado:\n");
-        printf ("ATENÇÃO: A LETRA DEVE SER MAIÚSCULA E TAMBÉM DEVE CONTER APENAS UMA LETRA DE 'A' A 'H'.\n");
     scanf("%c", &estado1);
-
+        
+    printf ("ATENÇÂO: O Código da cidade deve conter a letra que foi digitada anteriormente para o estado seguida do número 01 à 04. \n");
     printf("Informe o Código da Cidade:\n"); 
-        printf ("ATENÇÂO: O CÓDIGO DA CIDADE DEVE CONTER A LETRA DO ESTADO SEGUIDA DE UM NÚMERO DE 01 a 04. \n");
     scanf("%s", &cod_cidade1);
 
     printf("Informe o nome da Cidade:\n");
@@ -71,12 +71,12 @@ int main() {
 
     printf("CARTA 2\n");
 
+    printf ("ATENÇÂO: A letra dever ser maiúscula e deve conter apenas uma letra de 'A' à 'H'.\n");
     printf("Informe o Estado:\n");
-        printf ("ATENÇÂO: A letra dever ser MAIÚSCULA e também deve conter apenas uma letra de 'A' a 'H'.\n");
     scanf("%s", &estado2);
 
+    printf ("ATENÇÂO: O código da cidade deve conter a letra do estado seguida do número 01 à 04. \n");
     printf("Informe o Código da Cidade:\n"); 
-        printf ("ATENÇÂO: O código da cidade deve conter a letra do estado seguida de um número de 01 a 04. \n");
     scanf("%s", &cod_cidade2);
 
     printf("Informe o nome da Cidade:\n");
