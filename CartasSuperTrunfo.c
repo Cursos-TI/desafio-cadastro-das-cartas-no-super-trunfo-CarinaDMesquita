@@ -21,27 +21,40 @@ int main() {
     char estado1; 
     char cod_cidade1[4]; 
     char nome_cidade1[65]; 
+    
+    unsigned long int habitantes1; 
 
-    int habitantes1; 
     int numeros_pontos_turistico1;
-
+    
     float area_km1; 
     float pib1; 
     float densidadePopu1;
     float perCapita1;
+    float superPoder1;
 
     // Variáveis declaradas Carta2 com os atributos da cidade.
     char estado2[2];
     char cod_cidade2[4];
     char nome_cidade2[65];
 
-    int habitantes2;
+    unsigned long int habitantes2;
+     
     int numeros_pontos_turistico2;
-
+    
     float area_km2;
     float pib2; 
     float densidadePopu2;
     float perCapita2;
+    float superPoder2;
+
+    // variáveis declaradas para exibir a comparação das propriedades da Carta1 com as propriedades correspondentes da Carta2
+    int resultadoHabitantes;
+    int resultadoArea_km;
+    int resultadoPib;
+    int resultadoDensidadePopu;
+    int resultadoPerCapita;
+    int resultadoNumeros_pontos_turistico;
+    int resultadoSuperPoder;
 
     /* 
         Cadastro CARTA 1:
@@ -73,12 +86,18 @@ int main() {
 
     printf("Informe quantos pontos túristicos tem nessa Cidade:\n");
     scanf("%d", &numeros_pontos_turistico1);
+
+    // Cálculos Carta1: densidade Populacional, PIB per Capita e super poder 
     
-    // Conversão Explícita (Casting)
+    // Conversão Explicíta (Casting)
     densidadePopu1 = (float)(habitantes1) / area_km1;
     
-    //Conversão Explícita (Casting)
+    //Conversão Explicíta (Casting)
     perCapita1 = pib1 / (float)habitantes1;
+
+     // Somando todos os atributos numéricos e o inverso da densidade populacional
+     superPoder1 = habitantes1 + area_km1 + pib1 + numeros_pontos_turistico1 + perCapita1 + (1 / densidadePopu1);
+
 
     printf("\n\n");
     
@@ -113,20 +132,22 @@ int main() {
     printf("Informe quantos pontos túristicos tem nessa Cidade:\n");
     scanf("%d", &numeros_pontos_turistico2);
    
-    // Conversão Explícita (Casting)
+    // Cálculos Carta2: densidade Populacional, PIB per Capita e super poder 
+
+    // Conversão Explicíta (Casting)
     densidadePopu2 = (float)(habitantes2) / area_km2;
 
-    //Conversão Explícita (Casting)
+    //Conversão Explicíta (Casting)
     perCapita2 = pib2 / (float)habitantes2;
 
-    printf("\n");
-    
-    printf("RESULTADO FINAL\n\n");
+    // Somando todos os atributos numéricos e o inverso da densidade populacional
+    superPoder2 = habitantes2 + area_km2 + pib2 + numeros_pontos_turistico2 + perCapita2 + (1 / densidadePopu2);
+
+    printf("\n"); 
 
     // Exibição dos dados da CARTA 1:
-    // Função printf exibindo as informações e os valores de cada atributo da cidade cadastrada Carta 1
-    
-    printf("CARTA 1\n");   
+    // Função printf exibindo as informações e os valores de cada atributo da cidade cadastrada Carta 1   
+    printf("CARTA 1: \n");   
     printf("Estado: %c\n", estado1);
     printf("Código da Cidade: %s\n", cod_cidade1);
     printf("Nome da Cidade: %s\n", nome_cidade1);
@@ -136,12 +157,12 @@ int main() {
     printf("Números de pontos Turísticos: %d\n", numeros_pontos_turistico1);
     printf("Densidade Populacional: %.2f hab/km²\n", densidadePopu1);
     printf("PIB per Capita: %.2f reais\n", perCapita1);
+    printf("Super Poder: %.2f\n", superPoder1);
     printf("\n");
     
     // Exibição dos dados da CARTA 2:
     // Função printf exibindo as informações e os valores de cada atributo da cidade cadastrada Carta 2 
-    
-    printf("Carta 2\n");
+    printf("Carta 2:\n");
     printf("Estado: %s\n", estado2);
     printf("Código da Cidade: %s\n", cod_cidade2);
     printf("Nome da Cidade: %s\n", nome_cidade2);
@@ -151,9 +172,54 @@ int main() {
     printf("Números de pontos Turísticos: %d\n", numeros_pontos_turistico2);
     printf("Densidade Populacional: %.2f hab/km²\n", densidadePopu2);
     printf("PIB per Capita: %.2f reais\n", perCapita2);
+    printf("Super Poder: %.2f\n", superPoder2);
     printf("\n");
 
-    printf("FIM DO JOGO!!! \n\n");
+    // Comparação das Cartas usando os Operadores Relacionais
+    
+    resultadoHabitantes = habitantes1 > habitantes2;
+
+    resultadoArea_km = area_km1 > area_km2;
+
+    resultadoPib = pib1 > pib2;
+
+    resultadoDensidadePopu = densidadePopu1 < densidadePopu2;
+
+    resultadoPerCapita = perCapita1 > perCapita2;
+
+    resultadoNumeros_pontos_turistico = numeros_pontos_turistico1 > numeros_pontos_turistico2;
+
+    resultadoSuperPoder = superPoder1 > superPoder2;
+
+    // COMPARAÇÃO DAS CARTAS
+    // Exibindo a comparação das duas cartas com os atributos: habitantes, área, PIB, números de
+    // pontos turísticos, densidade populacional, PIB per Capita e super poder. 
+    printf("COMPARAÇÃO DAS CARTAS\n");
+
+    //condição ? expressão_verdadeira : expressão_falsa;
+    // comparação habitantes
+    printf("Habitantes: %s venceu (%d)\n", (resultadoHabitantes == 0 ? "Carta 2":"Carta 1"), resultadoHabitantes);
+    
+    //comparação da Área
+    printf("Área: %s venceu (%d)\n", (resultadoArea_km == 0 ? "Carta 2":"Carta 1"), resultadoArea_km);
+
+    //comparação do PIB
+    printf("PIB: %s venceu (%d)\n", (resultadoPib == 0 ? "Carta 2":"Carta 1"), resultadoPib);
+
+    //comparação dos pontos turísticos
+    printf("Números de pontos Turísticos: %s venceu (%d)\n", (resultadoNumeros_pontos_turistico == 0 ? "Carta 2":"Carta 1"), resultadoNumeros_pontos_turistico);
+
+    // comparação da densidade populacional
+    printf("Densidade Populacional: %s venceu (%d)\n",(resultadoDensidadePopu == 0 ? "Carta 2":"Carta 1"), resultadoDensidadePopu);
+
+    // comparação do PIB per Capita
+    printf("PIB per Capita: %s venceu (%d)\n", (resultadoPerCapita == 0 ? "Carta 2":"Carta 1"), resultadoPerCapita);
+
+    // comparação Super poder
+    printf("Super Poder: %s venceu (%d)\n", (resultadoSuperPoder == 0 ? "Carta 2":"Carta 1"), resultadoSuperPoder);
+    printf("\n");
+
+    printf("FIM DO JOGO!!! \n");
     printf("OBRIGADO(A)!!! \n");
 
     return 0;
